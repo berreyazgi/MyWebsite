@@ -6,11 +6,11 @@ const translations={
   heroDescription:'I’m Berre, a software engineering student at TED University. Building useful applications with C# and .NET. Exploring the space between code and cloud.',focusLabel:'CURRENT EXPLORATIONS',scrollHint:'SCROLL TO EXPLORE',workEyebrow:'SELECTED WORK',workNote:'A little context. A look inside. The code behind it.',workTitle:'Built to <em>figure it out.</em>',
   inventoryType:'SOFTWARE INVENTORY',inventorySummary:'Projects, people, and infrastructure in one place. A .NET MVC application with a data-driven interface and responsive layouts.',shopType:'E-COMMERCE / DOMAIN MODELING',shopSummary:'From product to cart to order. An e-commerce learning project exploring domain boundaries and modular architecture.',projectDetails:'Inside the project',takeLook:'TAKE A LOOK',inventoryCaption:'Project screenshot · Development version',shopCaption:'Interface design concept',inDevelopment:'In development',
   aboutEyebrow:'BEHIND THE BUILD',aboutLocation:'BASED IN ANKARA.<br>CURIOUS ABOUT EVERYWHERE.',aboutTitle:'I like knowing<br><em>how it all connects.</em>',aboutLead:'The data. The domain. The API. And the person using it.',aboutDescription:'I’m a final-year Software Engineering student at TED University, focused on backend development, software architecture, and distributed systems. I’ve gained professional experience through internships at ARD Bilişim and MYUNI, and I contribute to Oyuncak Kardeşliği as a volunteer software developer.',aboutPersonal:'Outside of software, I’m happiest on a nature walk or enjoying a quiet moment. There’s usually another question to follow when I’m back at my desk.',studentFact:'Software Engineering · Final year',
-  navExperience:'Experience',graduationFact:'Expected graduation · June 2027',
+  navExperience:'Experience',graduationFact:'Aug 2022 – Jun 2027 (Expected)',
   aboutStack:'Most of my work is in C# and ASP.NET Core, using Clean Architecture, CQRS, Dapper, and EF Core, with Docker, Jenkins, and CI/CD pipelines to build and ship it. I’m currently exploring Agentic AI, RAG, and cloud technologies.',
   ecoType:'AI EVENT ASSISTANT / IBM HACKATHON',ecoSummary:'An Agentic RAG-powered event discovery assistant built for an IBM Hackathon, combining asynchronous web crawling, watsonx.ai, and a Streamlit interface.',ecoCaption:'Image placeholder · Screenshot to be added',ecoStatus:'IBM Hackathon · Jan 2026',imagePlaceholder:'Screenshot coming soon',galleryPlaceholder:'A screenshot of this project hasn’t been added yet.',
   experienceEyebrow:'EXPERIENCE',experienceNote:'Internships and volunteer work.',experienceTitle:'Learning <em>on the job.</em>',
-  expMyuniPeriod:'2026 – Present',expMyuniLocation:'Remote / Ankara',expMyuniRole:'Fullstack Developer Intern',expMyuniDesc:'Developing the interface and service integration for the digital content showcase (Dark Science magazine) on the collection page, and building responsive UI components with modern web standards.',
+  expMyuniPeriod:'Apr – Oct 2026',expMyuniLocation:'Remote / Ankara',expMyuniRole:'Fullstack Developer Intern',expMyuniDesc:'Developed the interface and service integration for the digital content showcase (Dark Science magazine) on the collection page, and built responsive UI components with modern web standards.',
   expArdPeriod:'2025 – 2026',expArdLocation:'Ankara, Türkiye',expArdRole:'Software Engineering Intern · Two terms',expArdDesc:'Designed and developed modules for a corporate Expense Tracking System with ASP.NET Core MVC and N-Tier Architecture. Optimized the data-access layer with Dapper and SQL/LINQ, including reporting queries on the Northwind dataset; wrote edge-case unit test scenarios; and took part in daily stand-ups and sprint deliveries with an Agile/Scrum team. Returned for a second term to work on infrastructure improvements and refactoring.',
   expOyuncakPeriod:'2026 – Present',expOyuncakLocation:'Remote / Ankara',expOyuncakRole:'Volunteer Fullstack Developer',expOyuncakDesc:'Prepared the requirements analysis and technical architecture documentation for the association’s mobile app project, and designed the children’s theatre ticketing and dynamic toy-inventory categorization modules.',
   expMinistryPeriod:'Jul – Sep 2024',expMinistryLocation:'Ankara, Türkiye',expMinistryRole:'Volunteer Intern',ministryName:'Ministry of Environment, Urbanization and Climate Change',expMinistryDesc:'Observed the software development lifecycle of the ministry’s Java and AI teams and its public-sector IT integrations. Received technical training on network infrastructure, cloud systems, and security protocols.',
@@ -25,18 +25,18 @@ const translations={
   languagesText:'The languages I use across backend services, data work, and interfaces.',frameworksText:'Frameworks and libraries from my projects and internships, from ASP.NET Core MVC and Web API to Blazor Server, React, and PyTorch.',devopsText:'Containerizing services, automating builds with Jenkins, and the everyday tools for messaging, API testing, and databases.',dataText:'Relational databases, plus the architectural patterns I apply to keep code testable and responsibilities clear.',
   ticker:['BACKEND DEVELOPMENT','IBM HACKATHON','DISTRIBUTED SYSTEMS','HUAWEI ICT COMPETITION','CLOUD &amp; DEVOPS','TEDU GDG'],
   toolboxEyebrow:'MY TOOLBOX',toolboxNote:'Tools I use. Ideas I’m exploring.',toolboxTitle:'Always<br><em>connecting dots.</em>',
-  contactEyebrow:'OPEN TO INTERNSHIPS & COLLABORATION',contactTitle:'Let’s build<br><em>something good.</em>',contactText:'Interested in .NET backend development, cloud, and DevOps. Always open to a good learning opportunity.',footerNote:'MADE WITH CURIOSITY. MOVED WITH GSAP.',backTop:'BACK TO TOP',projectNotes:'PROJECT NOTES',overview:'Overview',gallery:'Gallery',zoomIn:'Zoom in +',zoomOut:'Zoom out −',galleryHelp:'Use Zoom in to inspect the details, then scroll or swipe inside the image.',galleryZoomHelp:'Zoomed view. Scroll or swipe inside the image to explore it.',motionOn:'Animations on — turn off',motionOff:'Animations off — turn on',motionSystem:'Animations off — following your system preference',motionUnavailable:'Animations unavailable — static view',openMenu:'Open navigation',closeMenu:'Close navigation',closeProject:'Close project notes',toolboxLabel:'Areas of interest'
+  contactEyebrow:'OPEN TO INTERNSHIPS & COLLABORATION',contactTitle:'Let’s build<br><em>something good.</em>',contactText:'Interested in .NET backend development, cloud, and DevOps. Always open to a good learning opportunity.',footerNote:'MADE WITH CURIOSITY. MOVED WITH GSAP.',backTop:'BACK TO TOP',projectNotes:'PROJECT NOTES',overview:'Overview',gallery:'Gallery',zoomIn:'Zoom in +',zoomOut:'Zoom out −',galleryHelp:'Use Zoom in to inspect the details, then scroll or swipe inside the image.',galleryZoomHelp:'Zoomed view. Scroll or swipe inside the image to explore it.',motionOn:'Animations on — turn off',motionOff:'Animations off — turn on',motionSystem:'Animations off — following your system preference',motionUnavailable:'Animations unavailable — static view',openMenu:'Open navigation',closeMenu:'Close navigation',closeProject:'Close project notes',toolboxLabel:'Areas of interest',tickerLabel:'Highlights'
  },
  tr:{
   skip:'İçeriğe geç',navWork:'Projeler <sup>03</sup>',navAbout:'Hakkımda',navContact:'Tanışalım',heroEyebrow:'YAZILIM MÜHENDİSLİĞİ / ANKARA, TÜRKİYE',heroEdition:'BU PORTFÖY DE BENİMLE BİRLİKTE GELİŞİYOR.',heroLine1:'Backend.',heroLine2:'Ötesini de.',
   heroDescription:'Ben Berre, TED Üniversitesi’nde yazılım mühendisliği öğrencisiyim. C# ve .NET ile işe yarayan uygulamalar geliştiriyor, kod ile bulut arasındaki dünyayı keşfediyorum.',focusLabel:'KEŞFETTİĞİM ALANLAR',scrollHint:'KEŞFETMEK İÇİN KAYDIR',workEyebrow:'SEÇİLİ PROJELER',workNote:'Kısa bir özet. İçeriden bir bakış. Arkasındaki kod.',workTitle:'Anlamak için <em>geliştiriyorum.</em>',
   inventoryType:'YAZILIM ENVANTERİ',inventorySummary:'Projeler, sorumlular ve altyapı bilgileri tek yerde. Veriye dayalı arayüzü ve farklı ekranlara uyumlu düzeniyle bir .NET MVC uygulaması.',shopType:'E-TİCARET / ALAN MODELLEME',shopSummary:'Üründen sepete, sepetten siparişe. Alan sınırlarını ve modüler mimariyi keşfettiğim bir e-ticaret öğrenme projesi.',projectDetails:'Projeyi yakından incele',takeLook:'YAKINDAN BAK',inventoryCaption:'Proje ekran görüntüsü · Geliştirme sürümü',shopCaption:'Arayüz tasarım konsepti',inDevelopment:'Geliştiriliyor',
   aboutEyebrow:'KODUN ARKASINDA',aboutLocation:'ANKARA’DAYIM.<br>MERAKIM HER YERDE.',aboutTitle:'Parçaların nasıl<br><em>birleştiğini merak ediyorum.</em>',aboutLead:'Veri. İş kuralları. API. Ve uygulamayı kullanan kişi.',aboutDescription:'TED Üniversitesi’nde son sınıf Yazılım Mühendisliği öğrencisiyim; backend geliştirme, yazılım mimarisi ve dağıtık sistemlere odaklanıyorum. ARD Bilişim ve MYUNI’deki stajlarımda profesyonel deneyim kazandım; Oyuncak Kardeşliği Derneği’nde gönüllü yazılım geliştirici olarak katkı sağlıyorum.',aboutPersonal:'Yazılımın dışında doğa yürüyüşlerini ve sakin anları seviyorum. Masama döndüğümde genellikle peşinden gideceğim yeni bir soru oluyor.',studentFact:'Yazılım Mühendisliği · Son sınıf',
-  navExperience:'Deneyim',graduationFact:'Beklenen mezuniyet · Haziran 2027',
+  navExperience:'Deneyim',graduationFact:'Ağustos 2022 – Haziran 2027 (Beklenen)',
   aboutStack:'Çalışmalarımın çoğunu C# ve ASP.NET Core ile; Clean Architecture, CQRS, Dapper ve EF Core kullanarak geliştiriyor, Docker, Jenkins ve CI/CD hatlarıyla derleyip yayına alıyorum. Şu sıralar Agentic AI, RAG ve bulut teknolojilerini keşfediyorum.',
   ecoType:'YAPAY ZEKÂ ETKİNLİK ASİSTANI / IBM HACKATHON',ecoSummary:'IBM Hackathon kapsamında geliştirilen; asenkron web tarama, watsonx.ai ve Streamlit kullanarak etkinlik keşfi yapan Agentic RAG tabanlı yapay zekâ asistanı.',ecoCaption:'Görsel alanı · Ekran görüntüsü eklenecek',ecoStatus:'IBM Hackathon · Ocak 2026',imagePlaceholder:'Ekran görüntüsü yakında',galleryPlaceholder:'Bu projenin ekran görüntüsü henüz eklenmedi.',
   experienceEyebrow:'DENEYİM',experienceNote:'Stajlar ve gönüllü çalışmalar.',experienceTitle:'İş başında <em>öğreniyorum.</em>',
-  expMyuniPeriod:'2026 – Devam ediyor',expMyuniLocation:'Uzaktan / Ankara',expMyuniRole:'Fullstack Developer Stajyeri',expMyuniDesc:'Koleksiyon sayfasındaki dijital içerik vitrininin (Dark Science dergisi) arayüzünü ve servis entegrasyonunu geliştiriyor, modern web standartlarıyla duyarlı (responsive) arayüz bileşenleri kodluyorum.',
+  expMyuniPeriod:'Nisan – Ekim 2026',expMyuniLocation:'Uzaktan / Ankara',expMyuniRole:'Fullstack Developer Stajyeri',expMyuniDesc:'Koleksiyon sayfasındaki dijital içerik vitrininin (Dark Science dergisi) arayüzünü ve servis entegrasyonunu geliştirdim, modern web standartlarıyla duyarlı (responsive) arayüz bileşenleri kodladım.',
   expArdPeriod:'2025 – 2026',expArdLocation:'Ankara, Türkiye',expArdRole:'Yazılım Mühendisliği Stajyeri · 2 dönem',expArdDesc:'ASP.NET Core MVC ve N-Katmanlı Mimari ile kurumsal Gider Takip Sistemi modüllerini tasarlayıp geliştirdim. Dapper ve SQL/LINQ ile veri erişim katmanını optimize ettim ve Northwind veri kümesi üzerinde raporlama sorguları yazdım; edge-case birim test senaryoları kurguladım; Agile/Scrum ekibiyle günlük stand-up ve sprint teslimatlarına katıldım. İkinci staj dönemimde ekibe devam ederek altyapı iyileştirme ve refactoring çalışmalarını yürüttüm.',
   expOyuncakPeriod:'2026 – Devam ediyor',expOyuncakLocation:'Uzaktan / Ankara',expOyuncakRole:'Gönüllü Fullstack Developer',expOyuncakDesc:'Dernek operasyonlarına yönelik mobil uygulama projesinin gereksinim analizini ve teknik mimari dokümantasyonunu hazırladım; çocuk tiyatrosu biletleme ve envanterdeki oyuncakların dinamik kategorizasyonu modüllerini kurguladım.',
   expMinistryPeriod:'Temmuz – Eylül 2024',expMinistryLocation:'Ankara, Türkiye',expMinistryRole:'Gönüllü Stajyer',ministryName:'T.C. Çevre, Şehircilik ve İklim Değişikliği Bakanlığı',expMinistryDesc:'Bakanlığın Java ve yapay zekâ ekiplerinin yazılım geliştirme süreçlerini ve kamu bilişim entegrasyonlarını gözlemledim. Ağ altyapısı, bulut sistemleri ve güvenlik protokolleri üzerine teknik eğitimler aldım.',
@@ -51,7 +51,7 @@ const translations={
   languagesText:'Backend servislerinde, veri işlerinde ve arayüzlerde kullandığım diller.',frameworksText:'Projelerimde ve stajlarımda kullandığım framework ve kütüphaneler: ASP.NET Core MVC ve Web API’den Blazor Server, React ve PyTorch’a.',devopsText:'Servisleri container’a almak, Jenkins ile derlemeleri otomatikleştirmek ve mesajlaşma, API testi ve veritabanı için günlük araçlar.',dataText:'İlişkisel veritabanları ve kodu test edilebilir, sorumlulukları anlaşılır tutmak için uyguladığım mimari desenler.',
   ticker:['BACKEND GELİŞTİRME','IBM HACKATHON','DAĞITIK SİSTEMLER','HUAWEI ICT COMPETITION','BULUT &amp; DEVOPS','TEDU GDG'],
   toolboxEyebrow:'ARAÇ KUTUM',toolboxNote:'Kullandığım araçlar. Keşfettiğim fikirler.',toolboxTitle:'Parçaları<br><em>bir araya getiriyorum.</em>',
-  contactEyebrow:'STAJ VE İŞ BİRLİĞİNE AÇIĞIM',contactTitle:'Birlikte güzel<br><em>bir şey geliştirelim.</em>',contactText:'.NET backend, bulut ve DevOps ile ilgileniyorum. İyi bir öğrenme fırsatına her zaman açığım.',footerNote:'MERAKLA GELİŞTİRİLDİ. GSAP İLE HAREKETLENDİ.',backTop:'BAŞA DÖN',projectNotes:'PROJE NOTLARI',overview:'Genel bakış',gallery:'Galeri',zoomIn:'Yakınlaştır +',zoomOut:'Uzaklaştır −',galleryHelp:'Ayrıntıları görmek için yakınlaştırın, ardından görselin içinde kaydırın.',galleryZoomHelp:'Yakınlaştırılmış görünüm. İncelemek için görselin içinde kaydırın.',motionOn:'Animasyonlar açık — kapat',motionOff:'Animasyonlar kapalı — aç',motionSystem:'Animasyonlar kapalı — sistem tercihine uyuluyor',motionUnavailable:'Animasyonlar kullanılamıyor — sabit görünüm',openMenu:'Menüyü aç',closeMenu:'Menüyü kapat',closeProject:'Proje notlarını kapat',toolboxLabel:'İlgi alanları'
+  contactEyebrow:'STAJ VE İŞ BİRLİĞİNE AÇIĞIM',contactTitle:'Birlikte güzel<br><em>bir şey geliştirelim.</em>',contactText:'.NET backend, bulut ve DevOps ile ilgileniyorum. İyi bir öğrenme fırsatına her zaman açığım.',footerNote:'MERAKLA GELİŞTİRİLDİ. GSAP İLE HAREKETLENDİ.',backTop:'BAŞA DÖN',projectNotes:'PROJE NOTLARI',overview:'Genel bakış',gallery:'Galeri',zoomIn:'Yakınlaştır +',zoomOut:'Uzaklaştır −',galleryHelp:'Ayrıntıları görmek için yakınlaştırın, ardından görselin içinde kaydırın.',galleryZoomHelp:'Yakınlaştırılmış görünüm. İncelemek için görselin içinde kaydırın.',motionOn:'Animasyonlar açık — kapat',motionOff:'Animasyonlar kapalı — aç',motionSystem:'Animasyonlar kapalı — sistem tercihine uyuluyor',motionUnavailable:'Animasyonlar kullanılamıyor — sabit görünüm',openMenu:'Menüyü aç',closeMenu:'Menüyü kapat',closeProject:'Proje notlarını kapat',toolboxLabel:'İlgi alanları',tickerLabel:'Öne çıkanlar'
  }
 };
 
@@ -81,7 +81,7 @@ function setLanguage(next,{initial=false}={}){
  $('#lang-en').classList.toggle('selected',next==='en');$('#lang-tr').classList.toggle('selected',next==='tr');
  $('#language-toggle').setAttribute('aria-label',next==='en'?'Switch to Turkish':'İngilizceye geç');
  $('.brand').setAttribute('aria-label',next==='en'?'Berre Yazgı home':'Berre Yazgı ana sayfa');
- $('.toolbox-tabs').setAttribute('aria-label',t('toolboxLabel'));
+ $('.toolbox-tabs').setAttribute('aria-label',t('toolboxLabel'));tickerEl.setAttribute('aria-label',t('tickerLabel'));
  $$('.project-image-button').forEach(button=>button.setAttribute('aria-label',next==='en'?`Explore ${projects[button.dataset.project].name}`:`${projects[button.dataset.project].name} projesini incele`));
  $('#dialog-close').setAttribute('aria-label',t('closeProject'));
  updateMotionLabel();updateMenuLabel();renderTicker();renderToolbox(false);
@@ -92,10 +92,74 @@ function setLanguage(next,{initial=false}={}){
  if(!initial)rebuildAnimations(false);
 }
 
+// Ticker: one native horizontal scroller. Touch/trackpad use native scrolling, mouse drags via Pointer Events,
+// and vertical page scroll feeds a smoothed drift (nudgeTicker). Everything writes the same scrollLeft, so nothing fights.
+// The track holds identical copies; the position is kept inside the third copy so wrapping by one copy width is invisible.
+const tickerEl=$('.ticker'),tickerTrack=$('#ticker-track');
+let tickerPos=0,tickerWritten=0,tickerSet=0,tickerWidth=0,tickerDrift=0,tickerFrame=0,tickerIdle=0,tickerDrag=null,tickerTouching=false;
 function renderTicker(){
- const items=t('ticker').map(item=>`<span>${item}</span><i>✳</i>`).join('');
- $('#ticker-track').innerHTML=items.repeat(3);
+ const items=t('ticker'),phase=tickerSet?((tickerPos%tickerSet)+tickerSet)%tickerSet/tickerSet:0;
+ const build=count=>{tickerTrack.innerHTML=Array.from({length:count},(_,copy)=>items.map(item=>`<span${copy?' aria-hidden="true"':''}>${item}</span><i aria-hidden="true">✳</i>`).join('')).join('');};
+ build(2);
+ const nodes=tickerTrack.children;tickerSet=nodes[items.length*2].offsetLeft-nodes[0].offsetLeft;tickerWidth=tickerEl.clientWidth;
+ if(tickerSet<=0){tickerSet=0;return;}
+ build(Math.max(5,Math.ceil(tickerWidth/tickerSet)+4));
+ tickerPos=tickerSet*(2+phase);tickerDrift=0;writeTicker();
 }
+function wrapTicker(strict){
+ if(!tickerSet)return;
+ const max=tickerEl.scrollWidth-tickerEl.clientWidth,low=strict?2*tickerSet:tickerSet*.5,high=strict?3*tickerSet:max-tickerSet*.5;
+ if(tickerPos<low||tickerPos>=high)tickerPos=2*tickerSet+(((tickerPos-2*tickerSet)%tickerSet)+tickerSet)%tickerSet;
+}
+function writeTicker(){tickerEl.scrollLeft=tickerPos;tickerWritten=tickerEl.scrollLeft;}
+function settleTicker(){clearTimeout(tickerIdle);tickerIdle=setTimeout(()=>{if(!tickerTouching&&!tickerDrag&&!tickerFrame){wrapTicker(true);writeTicker();}},180);}
+function tickTicker(){
+ tickerFrame=0;
+ if(tickerDrag||tickerTouching){tickerDrift=0;return;}
+ const step=tickerDrift*.12;tickerDrift-=step;tickerPos+=step;wrapTicker(true);writeTicker();
+ if(Math.abs(tickerDrift)>.3)tickerFrame=requestAnimationFrame(tickTicker);else tickerDrift=0;
+}
+function nudgeTicker(delta){
+ if(tickerDrag||tickerTouching||!delta)return;
+ tickerDrift+=delta;if(!tickerFrame)tickerFrame=requestAnimationFrame(tickTicker);
+}
+function moveTicker(delta){tickerDrift=0;tickerPos+=delta;wrapTicker(true);writeTicker();}
+tickerEl.addEventListener('scroll',()=>{
+ if(Math.abs(tickerEl.scrollLeft-tickerWritten)<1)return;
+ // Native scroll (touch swipe, trackpad, wheel): adopt its position and stop any drift. Only wrap near the edges
+ // while it is in progress, since writing scrollLeft would cancel native momentum; settle once it goes idle.
+ tickerPos=tickerWritten=tickerEl.scrollLeft;tickerDrift=0;
+ const before=tickerPos;wrapTicker(false);if(tickerPos!==before)writeTicker();
+ settleTicker();
+},{passive:true});
+tickerEl.addEventListener('touchstart',()=>{tickerTouching=true;tickerDrift=0;},{passive:true});
+['touchend','touchcancel'].forEach(type=>tickerEl.addEventListener(type,()=>{tickerTouching=false;settleTicker();},{passive:true}));
+tickerEl.addEventListener('pointerdown',event=>{
+ if(event.pointerType!=='mouse'||event.button!==0)return;
+ event.preventDefault();tickerDrift=0;
+ tickerDrag={id:event.pointerId,x:event.clientX,time:event.timeStamp,velocity:0};
+ tickerEl.setPointerCapture(event.pointerId);tickerEl.classList.add('dragging');
+});
+tickerEl.addEventListener('pointermove',event=>{
+ if(!tickerDrag||event.pointerId!==tickerDrag.id)return;
+ const dx=event.clientX-tickerDrag.x,dt=Math.max(1,event.timeStamp-tickerDrag.time);
+ tickerDrag.velocity=tickerDrag.velocity*.3+dx/dt*16*.7;tickerDrag.x=event.clientX;tickerDrag.time=event.timeStamp;
+ tickerPos-=dx;wrapTicker(true);writeTicker();
+});
+['pointerup','pointercancel','lostpointercapture'].forEach(type=>tickerEl.addEventListener(type,event=>{
+ if(!tickerDrag||event.pointerId!==tickerDrag.id)return;
+ const velocity=event.timeStamp-tickerDrag.time<80?tickerDrag.velocity:0;
+ tickerDrag=null;tickerEl.classList.remove('dragging');
+ if(tickerEl.hasPointerCapture(event.pointerId))tickerEl.releasePointerCapture(event.pointerId);
+ if(canAnimate()&&Math.abs(velocity)>1)nudgeTicker(-velocity*8);
+}));
+tickerEl.addEventListener('dragstart',event=>event.preventDefault());
+tickerEl.addEventListener('keydown',event=>{
+ const direction=event.key==='ArrowRight'?1:event.key==='ArrowLeft'?-1:0;if(!direction)return;
+ event.preventDefault();const step=direction*Math.round(tickerEl.clientWidth*.35);
+ if(canAnimate())nudgeTicker(step);else moveTicker(step);
+});
+if(window.ResizeObserver)new ResizeObserver(()=>{if(tickerEl.clientWidth!==tickerWidth)renderTicker();}).observe(tickerEl);
 function renderToolbox(animate=true){
  const panel=$('#toolbox-panel'),data=toolbox[activeTool];
  panel.innerHTML=`<p>${t(data.text)}</p><div class="toolbox-chips">${data.chips.map(chip=>`<span>${chip}</span>`).join('')}</div>`;
@@ -156,6 +220,7 @@ function rebuildAnimations(intro=false){
  if(motionContext){motionContext.revert();motionContext=null;}
  updateMotionLabel();requestProgress();
  if(!canAnimate()){
+  tickerDrift=0;
   if(window.gsap){gsap.killTweensOf('.toolbox-panel,.dialog-panel,.project-dialog');gsap.set('.toolbox-panel,.dialog-panel,.project-dialog',{clearProps:'opacity,visibility,transform'});}
   return;
  }
@@ -168,7 +233,8 @@ function rebuildAnimations(intro=false){
   if(window.ScrollTrigger){
    $$('.reveal').forEach(el=>gsap.from(el,{autoAlpha:0,y:30,duration:.8,ease:'power2.out',clearProps:'all',scrollTrigger:{trigger:el,start:'top 92%',once:true}}));
    gsap.to('.hero-star',{rotation:135,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1.2}});
-   gsap.fromTo('.ticker-track',{xPercent:-8},{xPercent:-25,ease:'none',scrollTrigger:{trigger:'.ticker',start:'top bottom',end:'bottom top',scrub:1.2}});
+   let tickerScroll=0;const tickerOffset=self=>self.progress*(self.end-self.start);
+   ScrollTrigger.create({trigger:'.ticker',start:'top bottom',end:'bottom top',onRefresh:self=>{tickerScroll=tickerOffset(self);},onUpdate:self=>{const y=tickerOffset(self);nudgeTicker((y-tickerScroll)*.6);tickerScroll=y;}});
    $$('.project-image-button').forEach(el=>{
     gsap.from(el,{y:35,autoAlpha:.3,duration:.9,ease:'power2.out',clearProps:'opacity,visibility,transform',scrollTrigger:{trigger:el,start:'top 92%',once:true}});
     if(context.conditions.desktop)gsap.fromTo(el.querySelector('.image-browser'),{y:18},{y:-18,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:1}});
@@ -198,4 +264,4 @@ $('#footer-year').textContent=String(new Date().getFullYear());
 setLanguage(language,{initial:true});
 rebuildAnimations(true);
 $$('img').forEach(img=>img.addEventListener('load',()=>{if(window.ScrollTrigger)ScrollTrigger.refresh();requestProgress();},{once:true}));
-if(document.fonts)document.fonts.ready.then(()=>{if(window.ScrollTrigger)ScrollTrigger.refresh();requestProgress();});
+if(document.fonts)document.fonts.ready.then(()=>{renderTicker();if(window.ScrollTrigger)ScrollTrigger.refresh();requestProgress();});
