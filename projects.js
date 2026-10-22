@@ -42,6 +42,25 @@ const projects = {
         ['Öğrendiklerim','Bir aggregate’in alt varlıklarını ne zaman yönetmesi gerektiği; veritabanı konfigürasyonunu alan modellerinden ayrı tutmak; ürün varyantlarının ve sipariş anındaki bilgilerin uygulamanın diğer bölümlerine etkisi.']
       ], flow:['API','Application','Domain kuralları','Infrastructure'], note:'Görsel bir tasarım konseptidir. Ödeme ve bildirim servisleri plan aşamasındadır.', cta:'Kaynak kodu incele'
     }
+  },
+  eco: {
+    name:'Eco-Agent — AI Event Assistant', url:'https://github.com/berreyazgi/ecoAgent', tags:['Python','watsonx.ai','Crawl4AI','Streamlit','Agentic RAG'],
+    image:null,imageAlt:{en:'Placeholder for an Eco-Agent screenshot',tr:'Eco-Agent ekran görüntüsü için görsel alanı'},imageCaption:{en:'Image placeholder · Screenshot to be added',tr:'Görsel alanı · Ekran görüntüsü eklenecek'},
+    en:{
+      category:'03 / AI EVENT ASSISTANT', summary:'An Agentic RAG-powered event discovery assistant built for an IBM Hackathon, combining asynchronous web crawling, watsonx.ai, and a Streamlit interface.',
+      sections:[
+        ['The problem','Event information is scattered across official institution sites, ticketing platforms, and city guides. Eco-Agent was built during an IBM Hackathon to explore whether cooperating agents could gather that information from live web pages and turn it into a structured overview.'],
+        ['The approach','A Python prototype with a Streamlit interface. An orchestrator coordinates two agents: a discovery agent crawls pages asynchronously with Crawl4AI and assigns a simple domain-based trust score, and a reasoning agent sends the collected content to an IBM Granite model on watsonx.ai to extract event names, dates, locations, and types. Candidate sources come from a small curated list, user-added sites, and web search results.'],
+        ['Design details','URLs are cleaned and validated before crawling, each source is handled separately so one unreachable site doesn’t stop the run, and repeated queries are served from a simple in-memory cache. Event data is modeled with Pydantic.']
+      ], flow:['Streamlit UI','Orchestrator','Crawl4AI discovery','watsonx.ai · Granite'], note:'Hackathon prototype · January 2026. The image area is a placeholder until a screenshot is added.', cta:'View repository'
+    },
+    tr:{
+      category:'03 / YAPAY ZEKÂ ETKİNLİK ASİSTANI', summary:'IBM Hackathon kapsamında geliştirilen; asenkron web tarama, watsonx.ai ve Streamlit kullanarak etkinlik keşfi yapan Agentic RAG tabanlı yapay zekâ asistanı.',
+      sections:[
+        ['Problem','Etkinlik bilgileri resmi kurum siteleri, bilet platformları ve şehir rehberleri arasında dağınık. Eco-Agent, birlikte çalışan ajanların bu bilgileri canlı web sayfalarından toplayıp yapılandırılmış bir özete dönüştürüp dönüştüremeyeceğini denemek için bir IBM Hackathon’unda geliştirildi.'],
+        ['Yaklaşım','Streamlit arayüzlü bir Python prototipi. Bir orchestrator iki ajanı yönetiyor: keşif ajanı Crawl4AI ile sayfaları asenkron olarak tarıyor ve alan adına dayalı basit bir güven skoru atıyor; akıl yürütme ajanı ise toplanan içeriği watsonx.ai üzerindeki IBM Granite modeline göndererek etkinlik adı, tarih, konum ve türünü çıkarıyor. Aday kaynaklar küçük bir seçili site listesinden, kullanıcının eklediği sitelerden ve web arama sonuçlarından geliyor.'],
+        ['Tasarım ayrıntıları','URL’ler taramadan önce temizlenip doğrulanıyor; her kaynak ayrı ele alındığı için erişilemeyen bir site çalışmayı durdurmuyor; tekrarlanan sorgular basit bir bellek içi önbellekten yanıtlanıyor. Etkinlik verisi Pydantic ile modelleniyor.']
+      ], flow:['Streamlit UI','Orchestrator','Crawl4AI keşif','watsonx.ai · Granite'], note:'Hackathon prototipi · Ocak 2026. Ekran görüntüsü eklenene kadar görsel alanı yer tutucudur.', cta:'Kaynak kodu incele'
+    }
   }
 };
-
