@@ -10,10 +10,14 @@
   <link rel="preload" href="assets/fonts/cormorant-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="codex.css">
   <!-- Flags the page before first paint so intro states never flash; codex.js removes it if GSAP is missing. -->
-  <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion');</script>
+  <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion');
+  // Theme before first paint: saved choice, else the system preference.
+  try{var th=localStorage.getItem('codex-theme');}catch(e){}
+  document.documentElement.dataset.theme=th==='dark'||th==='light'?th:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');</script>
   <script src="vendor/gsap.min.js" defer></script>
   <script src="vendor/ScrollTrigger.min.js" defer></script>
   <script src="vendor/lenis.min.js" defer></script>
+  <script src="projects.js" defer></script>
   <script src="codex.js" defer></script>
 </head>
 <body>
@@ -41,7 +45,11 @@
   <header class="masthead">
     <a class="monogram" href="#top" aria-label="Berre Yazgı — top">B<span>·</span>Y</a>
     <p class="mono-label">CODEX // VOL. 01 — <span class="sanguine">IN DRAFT</span></p>
-    <a class="mono-label link" href="https://github.com/berreyazgi" target="_blank" rel="noopener noreferrer">GITHUB ↗</a>
+    <div class="masthead-actions">
+      <button id="theme-toggle" class="mono-label link theme" type="button" aria-pressed="false"><span class="theme-glyph" aria-hidden="true"></span><span id="theme-label">DARK</span></button>
+      <button id="lang-toggle" class="mono-label link lang" type="button" aria-label="Switch to Turkish"><span data-lang="en">EN</span> / <span data-lang="tr">TR</span></button>
+      <a class="mono-label link" href="https://github.com/berreyazgi" target="_blank" rel="noopener noreferrer">GITHUB ↗</a>
+    </div>
   </header>
 
   <main id="main">
@@ -108,28 +116,65 @@
         </div>
 
         <nav class="hero-index mono-label" aria-label="Sections" data-intro>
-          <span>01 SELECTED_WORKS</span><span>02 MIND_PALACE</span><span>03 ARCHIVE</span>
+          <a href="#projects-section">01 SELECTED_WORKS</a><a href="#toolset">02 TOOLSET</a><a href="#archive">03 ARCHIVE</a><a href="#contact">04 CONTACT</a>
         </nav>
       </div>
     </section>
 
-    <!-- Placeholder so the scroll-drawn layer can be evaluated. Replaced by the horizontal case-study gallery next. -->
-    <section class="next" aria-labelledby="next-title">
-      <p class="mono-label">FIG. 01 // SELECTED_WORKS</p>
-      <h2 id="next-title" class="display-sm">Case studies — <em>next build step.</em></h2>
-      <svg class="flow" viewBox="0 0 900 140" role="img" aria-label="Request flow: client, API, application, domain, PostgreSQL">
-        <g class="ink-thin">
-          <rect data-section-draw pathLength="1" x="1" y="40" width="130" height="60"/>
-          <rect data-section-draw pathLength="1" x="191" y="40" width="130" height="60"/>
-          <rect data-section-draw pathLength="1" x="381" y="40" width="130" height="60"/>
-          <rect data-section-draw pathLength="1" x="571" y="40" width="130" height="60"/>
-          <path data-section-draw pathLength="1" d="M761 50 A70 14 0 0 1 899 50 V92 A70 14 0 0 1 761 92 Z M761 50 A70 14 0 0 0 899 50"/>
-        </g>
-        <path class="thread" data-section-draw pathLength="1" d="M131 70H191M321 70H381M511 70H571M701 70H761"/>
-        <g class="flow-labels"><text x="66" y="75">CLIENT</text><text x="256" y="75">API</text><text x="446" y="75">APPLICATION</text><text x="636" y="75">DOMAIN</text><text x="830" y="80">POSTGRESQL</text></g>
-      </svg>
+    <!-- FIG. 01: case studies rendered from projects.js. Horizontal pinned track on desktop (codex.js adds .is-horizontal), vertical stack otherwise. -->
+    <section class="works" id="projects-section" aria-labelledby="works-title">
+      <header class="works-head">
+        <p class="mono-label">FIG. 01 // SELECTED_WORKS</p>
+        <h2 id="works-title" class="display-sm" data-i18n="worksTitle">Case studies</h2>
+        <p class="mono-label works-count" aria-hidden="true"><b id="works-index">01</b> / <span id="works-total">03</span></p>
+      </header>
+      <div class="works-viewport">
+        <ol class="works-track" id="works-track"></ol>
+      </div>
+      <div class="works-progress" aria-hidden="true"><span id="works-progress"></span></div>
+    </section>
+
+    <!-- FIG. 02: tabbed toolset. Reading section: native cursor, no lens. -->
+    <section class="sec toolset" id="toolset" aria-labelledby="toolset-title" data-native-cursor>
+      <header class="sec-head">
+        <p class="mono-label">FIG. 02 // TOOLSET</p>
+        <h2 id="toolset-title" class="display-sm" data-i18n="toolsetTitle">Toolset</h2>
+      </header>
+      <div class="toolset-body">
+        <div class="tool-tabs" id="tool-tabs" role="tablist" aria-orientation="vertical"></div>
+        <div class="tool-panel" id="tool-panel" role="tabpanel" tabindex="0"></div>
+      </div>
+    </section>
+
+    <!-- FIG. 03: archival ledger of experience, competitions, communities. -->
+    <section class="sec archive" id="archive" aria-labelledby="archive-title" data-native-cursor>
+      <header class="sec-head">
+        <p class="mono-label">FIG. 03 // ARCHIVE</p>
+        <h2 id="archive-title" class="display-sm" data-i18n="archiveTitle">Experience &amp; record</h2>
+      </header>
+      <div id="ledger"></div>
+    </section>
+
+    <!-- FIG. 04: contact. -->
+    <section class="sec contact" id="contact" aria-labelledby="contact-title" data-native-cursor>
+      <header class="sec-head">
+        <p class="mono-label">FIG. 04 // CONTACT</p>
+        <h2 id="contact-title" class="display-sm" data-i18n="contactTitle">Contact</h2>
+      </header>
+      <p class="contact-text" data-i18n="contactText"></p>
+      <a class="mail" href="mailto:berreyazgi@hotmail.com"><span class="mail-addr">berreyazgi@hotmail.com</span><svg class="mail-plane" viewBox="0 0 32 32" aria-hidden="true"><path d="M30 2 2 13l11 5 5 11z"/><path d="M30 2 13 18"/></svg></a>
+      <ul class="contact-links mono-label">
+        <li><a class="link" href="https://github.com/berreyazgi" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+        <li>Ankara, Türkiye</li>
+      </ul>
     </section>
   </main>
+
+  <footer class="codex-foot mono-label">
+    <span>© <span id="foot-year">2026</span> Berre Yazgı</span>
+    <span>CODEX // GSAP · LENIS</span>
+    <a class="link" href="#top" data-i18n="backTop">Back to top ↑</a>
+  </footer>
 
   <div class="lens" id="lens" aria-hidden="true"><span class="lens-readout">×2.0</span></div>
 </body>
