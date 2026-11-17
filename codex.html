@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F3EFE6">
+  <meta name="description" content="Berre Yazgı — backend engineer. C# and ASP.NET Core services, data-access design, distributed systems.">
+  <title>Berre Yazgı — Codex</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="codex.css">
+  <!-- Flags the page before first paint so intro states never flash; codex.js removes it if GSAP is missing. -->
+  <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion');</script>
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/ScrollTrigger.min.js" defer></script>
+  <script src="vendor/lenis.min.js" defer></script>
+  <script src="codex.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Fixed construction layer: golden sections of the viewport, rulers, proportion canon. Drawn by scroll. -->
+  <svg class="codex-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g class="faint">
+      <line data-scroll-draw pathLength="1" x1="550" y1="0" x2="550" y2="900"/>
+      <line data-scroll-draw pathLength="1" x1="890" y1="0" x2="890" y2="900"/>
+      <line data-scroll-draw pathLength="1" x1="0" y1="344" x2="1440" y2="344"/>
+      <line data-scroll-draw pathLength="1" x1="0" y1="556" x2="1440" y2="556"/>
+      <rect data-scroll-draw pathLength="1" x="-120" y="420" width="560" height="560"/>
+      <circle data-scroll-draw pathLength="1" cx="160" cy="700" r="330"/>
+      <circle data-scroll-draw pathLength="1" cx="160" cy="700" r="280"/>
+      <path data-scroll-draw pathLength="1" d="M-120 420 L440 980 M440 420 L-120 980"/>
+      <path data-scroll-draw pathLength="1" d="M1300 0 A 520 520 0 0 0 1440 700"/>
+    </g>
+    <g class="ruler">
+      <path data-scroll-draw pathLength="1" d="M24 0 V900"/>
+      <path data-scroll-draw pathLength="1" d="M24 60h8M24 120h14M24 180h8M24 240h14M24 300h8M24 360h14M24 420h8M24 480h14M24 540h8M24 600h14M24 660h8M24 720h14M24 780h8M24 840h14"/>
+    </g>
+  </svg>
+
+  <header class="masthead">
+    <a class="monogram" href="#top" aria-label="Berre Yazgı — top">B<span>·</span>Y</a>
+    <p class="mono-label">CODEX // VOL. 01 — <span class="sanguine">IN DRAFT</span></p>
+    <a class="mono-label link" href="https://github.com/berreyazgi" target="_blank" rel="noopener noreferrer">GITHUB ↗</a>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <span class="corner tl mono-label" data-intro>FIG. 00 // CODEX_COVER</span>
+      <span class="corner tr mono-label" data-intro aria-hidden="true">X <b id="coord-x">0000</b> · Y <b id="coord-y">0000</b> · θ <b id="coord-a">000.0</b>°</span>
+      <span class="corner bl mono-label" data-intro>39.9334° N / 32.8597° E — ANKARA</span>
+      <span class="corner br mono-label" data-intro aria-hidden="true">LOCAL <b id="clock">--:--:--</b> · SCROLL <b id="scroll-pct">000</b>%</span>
+
+      <!-- Golden rectangle construction (φ ≈ 1.618): squares 550/340/210/130/80/50, spiral eye at (644, 398). -->
+      <svg class="hero-schema" id="hero-schema" viewBox="-40 -60 1000 670" aria-hidden="true">
+        <g class="ink-thin">
+          <rect data-draw pathLength="1" x="0" y="0" width="890" height="550"/>
+          <path data-draw pathLength="1" d="M550 0V550M550 340H890M680 340V550M550 420H680M630 340V420M630 390H680"/>
+          <circle data-draw pathLength="1" cx="550" cy="550" r="550"/>
+          <circle data-draw pathLength="1" cx="644" cy="398" r="170"/>
+          <path data-draw pathLength="1" d="M0 0 L890 550 M550 550 L890 0"/>
+        </g>
+        <path class="ink" data-draw pathLength="1" d="M0 550 A550 550 0 0 1 550 0 A340 340 0 0 1 890 340 A210 210 0 0 1 680 550 A130 130 0 0 1 550 420 A80 80 0 0 1 630 340 A50 50 0 0 1 680 390"/>
+        <g class="dims">
+          <path data-draw pathLength="1" d="M0 -24H550M0 -30V-18M550 -30V-18M550 -24H890M890 -30V-18M914 0V340M908 0H920M908 340H920"/>
+          <text x="275" y="-34">550</text><text x="720" y="-34">340</text><text x="926" y="174">340</text>
+          <text x="10" y="585">φ = (1 + √5) / 2 ≈ 1.6180</text>
+        </g>
+        <g id="arm" class="arm">
+          <line data-draw pathLength="1" x1="644" y1="398" x2="644" y2="190"/>
+          <circle cx="644" cy="190" r="4"/>
+        </g>
+        <g class="eye">
+          <circle cx="644" cy="398" r="6"/>
+          <path d="M624 398H664M644 378V418"/>
+        </g>
+      </svg>
+
+      <div class="hero-copy">
+        <p class="mono-label kicker" data-intro><span class="sanguine">■</span> BACKEND ENGINEERING — C# / ASP.NET CORE — DISTRIBUTED SYSTEMS</p>
+
+        <div class="lens-target" data-lens>
+          <h1 id="hero-title" class="display">
+            <span class="line"><span>Berre</span></span>
+            <span class="line"><em>Yazgı</em></span>
+          </h1>
+          <div class="xray" aria-hidden="true">
+            <pre class="xray-code"><span class="c">// FIG. 00.1 — runtime profile</span>
+<span class="k">public sealed record</span> Engineer(
+  <span class="t">string</span>   Focus    = <span class="s">"backend · distributed systems"</span>,
+  <span class="t">string[]</span> Runtime  = [<span class="s">"C#"</span>, <span class="s">"ASP.NET Core"</span>],
+  <span class="t">string[]</span> Data     = [<span class="s">"PostgreSQL"</span>, <span class="s">"Dapper"</span>, <span class="s">"EF Core"</span>],
+  <span class="t">string[]</span> Patterns = [<span class="s">"Clean Architecture"</span>, <span class="s">"CQRS"</span>],
+  <span class="t">string[]</span> Delivery = [<span class="s">"Docker"</span>, <span class="s">"Jenkins"</span>, <span class="s">"CI/CD"</span>]);</pre>
+          </div>
+        </div>
+
+        <div class="lens-target lead-wrap" data-lens>
+          <p class="lead" data-intro>I design and build backend services — domain models, data-access layers, and the pipelines that ship them. Final-year Software Engineering, TED University. Internships at ARD Bilişim and MYUNI.</p>
+          <div class="xray" aria-hidden="true">
+            <ol class="xray-stack">
+              <li><span>L1</span>API / MVC<i>ASP.NET Core · JWT</i></li>
+              <li><span>L2</span>APPLICATION<i>CQRS · handlers</i></li>
+              <li><span>L3</span>DOMAIN<i>aggregates · invariants</i></li>
+              <li><span>L4</span>INFRASTRUCTURE<i>Dapper · EF Core · PostgreSQL</i></li>
+            </ol>
+          </div>
+        </div>
+
+        <nav class="hero-index mono-label" aria-label="Sections" data-intro>
+          <span>01 SELECTED_WORKS</span><span>02 MIND_PALACE</span><span>03 ARCHIVE</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Placeholder so the scroll-drawn layer can be evaluated. Replaced by the horizontal case-study gallery next. -->
+    <section class="next" aria-labelledby="next-title">
+      <p class="mono-label">FIG. 01 // SELECTED_WORKS</p>
+      <h2 id="next-title" class="display-sm">Case studies — <em>next build step.</em></h2>
+      <svg class="flow" viewBox="0 0 900 140" role="img" aria-label="Request flow: client, API, application, domain, PostgreSQL">
+        <g class="ink-thin">
+          <rect data-section-draw pathLength="1" x="1" y="40" width="130" height="60"/>
+          <rect data-section-draw pathLength="1" x="191" y="40" width="130" height="60"/>
+          <rect data-section-draw pathLength="1" x="381" y="40" width="130" height="60"/>
+          <rect data-section-draw pathLength="1" x="571" y="40" width="130" height="60"/>
+          <path data-section-draw pathLength="1" d="M761 50 A70 14 0 0 1 899 50 V92 A70 14 0 0 1 761 92 Z M761 50 A70 14 0 0 0 899 50"/>
+        </g>
+        <path class="thread" data-section-draw pathLength="1" d="M131 70H191M321 70H381M511 70H571M701 70H761"/>
+        <g class="flow-labels"><text x="66" y="75">CLIENT</text><text x="256" y="75">API</text><text x="446" y="75">APPLICATION</text><text x="636" y="75">DOMAIN</text><text x="830" y="80">POSTGRESQL</text></g>
+      </svg>
+    </section>
+  </main>
+
+  <div class="lens" id="lens" aria-hidden="true"><span class="lens-readout">×2.0</span></div>
+</body>
+</html>

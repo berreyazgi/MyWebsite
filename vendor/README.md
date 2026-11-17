@@ -1,10 +1,11 @@
-# GSAP distribution files
+# Vendored files
 
-Vendored from the official `greensock/GSAP` repository on 2026-10-16. Version: 3.15.0.
+- `motion.min.js`: Motion 12.43.0 (formerly Framer Motion), UMD build `dist/motion.js` from the `motion` npm package. Exposes `window.Motion` (`animate`, `inView`, `hover`, `stagger`). MIT, see `motion-LICENSE.md`.
+- Fonts in `../assets/fonts/`: Inter and JetBrains Mono variable woff2 (latin + latin-ext) from `@fontsource-variable/*` 5.3.0. SIL OFL 1.1, licenses alongside.
 
-- `gsap.min.js`: https://github.com/greensock/GSAP/blob/master/dist/gsap.min.js — Git blob `3c73d761a9a7dbd166549451ba7afd62dc7121d0`.
-- `ScrollTrigger.min.js`: https://github.com/greensock/GSAP/blob/master/dist/ScrollTrigger.min.js — Git blob `35d4ab7dc31dd859f44e5460ac6a5e8a0f0660c2`.
+Served locally so the site does not depend on a third-party CDN at runtime.
 
-Original copyright and license notices are preserved in both files. License terms: https://gsap.com/standard-license.
-
-The files are served locally so the published portfolio does not depend on a third-party CDN at runtime.
+Used by `codex.html`:
+- `gsap.min.js`, `ScrollTrigger.min.js`: GSAP 3.15.0 from `greensock/GSAP` `dist/` (vendored 2026-10-16). https://gsap.com/standard-license
+- `lenis.min.js`: Lenis 1.3.27 from the `lenis` npm package, `dist/lenis.min.js`. MIT, see `lenis-LICENSE`.
+- Cormorant Garamond variable woff2 (normal + italic, latin + latin-ext) in `../assets/fonts/`, `@fontsource-variable/cormorant-garamond` 5.3.0. SIL OFL 1.1.

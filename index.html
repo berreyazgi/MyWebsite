@@ -3,61 +3,200 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#171b18">
-  <meta name="description" content="Berre Yazgı — software engineering student in Ankara. C#/.NET projects, thoughtful systems, and a path into cloud and DevOps.">
-  <meta property="og:title" content="Berre Yazgı — Backend & Beyond">
-  <meta property="og:description" content="Selected software projects. Built with curiosity, explained simply.">
+  <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="description" content="Berre Yazgı — software engineering student at TED University. Backend development with C# and ASP.NET Core, software architecture, distributed systems.">
+  <meta property="og:title" content="Berre Yazgı — Software Engineer">
+  <meta property="og:description" content="Backend development with C# and ASP.NET Core. Projects, architecture notes, experience.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://berre-yazgi.merrymaple4.chatgpt.site">
-  <title>Berre Yazgı — Backend & Beyond</title>
+  <title>Berre Yazgı — Software Engineer</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
-  <script src="vendor/gsap.min.js" defer></script>
-  <script src="vendor/ScrollTrigger.min.js" defer></script>
+  <!-- Hide reveal targets before first paint only when motion will run; app.js removes the class if Motion fails to load. -->
+  <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion');</script>
+  <script src="vendor/motion.min.js" defer></script>
   <script src="projects.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
-  <div class="reading-progress" aria-hidden="true"><span id="reading-progress"></span></div>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
-  <header class="site-header wrap">
-    <a class="brand" href="#home" aria-label="Berre Yazgı home"><span class="brand-symbol" aria-hidden="true">b<span>y</span>↗</span><span>BERRE YAZGI</span></a>
-    <nav class="desktop-nav" aria-label="Main navigation"><a href="#work" data-i18n="navWork">Work <sup>03</sup></a><a href="#about" data-i18n="navAbout">About</a><a href="#experience" data-i18n="navExperience">Experience</a><a href="#contact" class="nav-contact"><span data-i18n="navContact">Let’s talk</span><span aria-hidden="true">↗</span></a></nav>
-    <div class="header-actions"><button id="motion-toggle" class="motion-toggle" type="button" aria-pressed="true" aria-label="Turn animations off" title="Turn animations off"><span aria-hidden="true">✳</span></button><button id="language-toggle" class="language-toggle" type="button" aria-label="Switch to Turkish"><span id="lang-en" class="selected">EN</span><span class="language-divider">/</span><span id="lang-tr">TR</span></button><button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation"><span></span><span></span></button></div>
-  </header>
-  <nav id="mobile-nav" class="mobile-nav wrap" aria-label="Mobile navigation" hidden><a href="#work" data-i18n="navWork">Work <sup>03</sup></a><a href="#about" data-i18n="navAbout">About</a><a href="#experience" data-i18n="navExperience">Experience</a><a href="#contact" data-i18n="navContact">Let’s talk</a></nav>
-  <main id="main">
-    <section class="hero wrap" id="home" aria-labelledby="hero-title">
-      <div class="hero-kicker"><p class="eyebrow"><span class="status-dot"></span><span data-i18n="heroEyebrow">SOFTWARE ENGINEERING / ANKARA, TÜRKİYE</span></p><p class="hero-edition" data-i18n="heroEdition">A PORTFOLIO IN PROGRESS, JUST LIKE ME.</p></div>
-      <div class="hero-center"><h1 id="hero-title"><span class="title-mask"><span class="title-line" data-i18n="heroLine1">Backend.</span></span><span class="title-mask"><em class="title-line" data-i18n="heroLine2">And beyond.</em></span></h1>
-        <div class="orbit-scene" aria-hidden="true"><div class="orbit-grid"></div><div class="orbit-ring ring-outer"></div><div class="orbit-ring ring-inner"></div><svg class="hero-star" viewBox="0 0 200 200"><path d="M91 2h18l2 63 44-45 13 13-45 44 63-2v18l-63 2 45 44-13 13-44-45-2 63H91l-2-63-44 45-13-13 45-44-63 2V77l63-2-45-44 13-13 44 45Z"/></svg><span class="orbit-node node-one">C# / .NET</span><span class="orbit-node node-two">BUILD → LEARN</span><span class="orbit-small">{ always curious }</span><span class="orbit-cross cross-one">+</span><span class="orbit-cross cross-two">+</span></div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand mono" href="#top">berre<span class="muted">.yazgi</span></a>
+      <nav class="nav" aria-label="Main">
+        <a href="#work" data-i18n="navWork">Projects</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#experience" data-i18n="navExperience">Experience</a>
+        <a href="#community" data-i18n="navCommunity">Community</a>
+      </nav>
+      <div class="header-actions">
+        <button id="language-toggle" class="segmented mono" type="button" aria-label="Switch to Turkish"><span id="lang-en" class="selected">EN</span><span id="lang-tr">TR</span></button>
+        <a class="btn btn-primary btn-sm" href="#contact" data-i18n="navContact">Contact</a>
       </div>
-      <div class="hero-bottom"><p class="hero-description" data-i18n="heroDescription">I’m Berre, a software engineering student at TED University. Building useful applications with C# and .NET. Exploring the space between code and cloud.</p><div class="hero-focus"><span class="eyebrow" data-i18n="focusLabel">CURRENT EXPLORATIONS</span><p>.NET <span>↗</span> Cloud <span>↗</span> DevOps</p></div><a class="scroll-link" href="#work"><span class="scroll-circle" aria-hidden="true">↓</span><span data-i18n="scrollHint">SCROLL TO EXPLORE</span></a></div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top" aria-labelledby="hero-title">
+      <div class="grid-pattern" aria-hidden="true"></div>
+      <a class="badge" href="#contact" data-hero><span class="dot" aria-hidden="true"></span><span data-i18n="heroBadge">Open to internships &amp; collaboration</span></a>
+      <h1 id="hero-title" data-hero>Berre Yazgı</h1>
+      <p class="hero-role" data-hero data-i18n="heroRole">Software engineering student · Backend &amp; distributed systems</p>
+      <p class="hero-desc" data-hero data-i18n="heroDescription"></p>
+      <div class="hero-actions" data-hero>
+        <a class="btn btn-primary" href="#work"><span data-i18n="heroPrimary">View projects</span> <span aria-hidden="true">→</span></a>
+        <a class="btn btn-outline" href="https://github.com/berreyazgi" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+      <dl class="hero-meta mono" data-hero>
+        <div><dt data-i18n="metaLocation">Location</dt><dd>Ankara, TR</dd></div>
+        <div><dt data-i18n="metaStack">Primary stack</dt><dd>C# · ASP.NET Core</dd></div>
+        <div><dt data-i18n="metaFocus">Exploring</dt><dd>Cloud · DevOps · RAG</dd></div>
+      </dl>
     </section>
-    <div class="ticker" role="region" aria-label="Highlights" tabindex="0"><div class="ticker-track" id="ticker-track"><span>BACKEND DEVELOPMENT</span><i aria-hidden="true">✳</i><span>IBM HACKATHON</span><i aria-hidden="true">✳</i><span>DISTRIBUTED SYSTEMS</span><i aria-hidden="true">✳</i><span>HUAWEI ICT COMPETITION</span><i aria-hidden="true">✳</i><span>CLOUD &amp; DEVOPS</span><i aria-hidden="true">✳</i><span>TEDU GDG</span><i aria-hidden="true">✳</i></div></div>
-    <section class="work-section wrap" id="work" aria-labelledby="work-title">
-      <div class="section-top reveal"><p class="eyebrow"><span class="section-index">01 /</span><span data-i18n="workEyebrow">SELECTED WORK</span></p><p class="section-note" data-i18n="workNote">A little context. A look inside. The code behind it.</p></div>
-      <h2 class="section-title reveal" id="work-title" data-i18n="workTitle">Built to <em>figure it out.</em></h2>
-      <article class="project-row" id="project-inventory">
-        <div class="project-copy reveal"><p class="project-type"><span>01</span><span data-i18n="inventoryType">SOFTWARE INVENTORY</span></p><h3>Yazılım <br>Envanteri<span class="title-dot">.</span></h3><p class="project-description" data-i18n="inventorySummary">Projects, people, and infrastructure in one place. A .NET MVC application with a data-driven interface and responsive layouts.</p><div class="project-tags"><span>ASP.NET Core MVC</span><span>Dapper</span><span>PostgreSQL</span></div><button class="project-details text-button" data-project="inventory" type="button"><span data-i18n="projectDetails">Inside the project</span><span class="link-circle" aria-hidden="true">↗</span></button><a class="source-link" href="https://github.com/berreyazgi/YazilimEnvanteri" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
-        <div class="project-media"><button class="project-image-button inventory-image" type="button" data-project="inventory" aria-label="Explore Yazılım Envanteri"><div class="image-browser"><div class="browser-bar" aria-hidden="true"><span class="browser-dots"><i></i><i></i><i></i></span><span>yazılım envanteri / projelerim</span><span>↗</span></div><div class="image-window"><img src="assets/inventory-projects.png" width="1892" height="900" alt="Yazılım Envanteri project table and filters" loading="lazy"></div></div><span class="image-open"><span data-i18n="takeLook">TAKE A LOOK</span> ↗</span><span class="media-corner" aria-hidden="true">[ 01 ]</span></button><div class="media-caption"><span data-i18n="inventoryCaption">Project screenshot · Development version</span><span class="development-label"><span></span><span data-i18n="inDevelopment">In development</span></span></div></div>
-      </article>
-      <article class="project-row project-reversed" id="project-shop">
-        <div class="project-copy reveal"><p class="project-type"><span>02</span><span data-i18n="shopType">E-COMMERCE / DOMAIN MODELING</span></p><h3>ShopApp<span class="title-dot">.</span></h3><p class="project-description" data-i18n="shopSummary">From product to cart to order. An e-commerce learning project exploring domain boundaries and modular architecture.</p><div class="project-tags"><span>ASP.NET Core API</span><span>EF Core</span><span>CQRS</span><span>JWT</span></div><button class="project-details text-button" data-project="shop" type="button"><span data-i18n="projectDetails">Inside the project</span><span class="link-circle" aria-hidden="true">↗</span></button><a class="source-link" href="https://github.com/berreyazgi/ShopApp" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
-        <div class="project-media"><button class="project-image-button shop-image" type="button" data-project="shop" aria-label="Explore ShopApp"><div class="image-browser"><div class="browser-bar" aria-hidden="true"><span class="browser-dots"><i></i><i></i><i></i></span><span>shopapp / ürünler</span><span>↗</span></div><div class="image-window"><img src="assets/shopapp-design.png" width="1448" height="1086" alt="ShopApp product management interface design concept" loading="lazy"></div></div><span class="image-open"><span data-i18n="takeLook">TAKE A LOOK</span> ↗</span><span class="media-corner" aria-hidden="true">[ 02 ]</span></button><div class="media-caption"><span data-i18n="shopCaption">Interface design concept</span><span class="development-label"><span></span><span data-i18n="inDevelopment">In development</span></span></div></div>
-      </article>
-      <article class="project-row" id="project-eco">
-        <div class="project-copy reveal"><p class="project-type"><span>03</span><span data-i18n="ecoType">AI EVENT ASSISTANT / IBM HACKATHON</span></p><h3>Eco-<br>Agent<span class="title-dot">.</span></h3><p class="project-description" data-i18n="ecoSummary">An Agentic RAG-powered event discovery assistant built for an IBM Hackathon, combining asynchronous web crawling, watsonx.ai, and a Streamlit interface.</p><div class="project-tags"><span>Python</span><span>watsonx.ai</span><span>Crawl4AI</span><span>Streamlit</span><span>Agentic RAG</span></div><button class="project-details text-button" data-project="eco" type="button"><span data-i18n="projectDetails">Inside the project</span><span class="link-circle" aria-hidden="true">↗</span></button><a class="source-link" href="https://github.com/berreyazgi/ecoAgent" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
-        <div class="project-media"><button class="project-image-button eco-image" type="button" data-project="eco" aria-label="Explore Eco-Agent — AI Event Assistant"><div class="image-browser"><div class="browser-bar" aria-hidden="true"><span class="browser-dots"><i></i><i></i><i></i></span><span>eco-agent / ai event assistant</span><span>↗</span></div><div class="image-window"><div class="image-placeholder"><span class="placeholder-star" aria-hidden="true">✳</span><span data-i18n="imagePlaceholder">Screenshot coming soon</span><span class="placeholder-lines" aria-hidden="true"><i></i><i></i><i></i></span></div></div></div><span class="image-open"><span data-i18n="takeLook">TAKE A LOOK</span> ↗</span><span class="media-corner" aria-hidden="true">[ 03 ]</span></button><div class="media-caption"><span data-i18n="ecoCaption">Image placeholder · Screenshot to be added</span><span class="development-label"><span></span><span data-i18n="ecoStatus">IBM Hackathon · Jan 2026</span></span></div></div>
-      </article>
+
+    <section class="section wrap" id="work" aria-labelledby="work-title">
+      <header class="section-head" data-reveal>
+        <p class="label mono">01 / <span data-i18n="workEyebrow">Projects</span></p>
+        <h2 id="work-title" data-i18n="workTitle">Selected projects</h2>
+        <p class="muted" data-i18n="workNote">Repositories with architecture notes, stack and current status.</p>
+      </header>
+      <div class="bento" data-stagger>
+        <article class="card span-2 row-2 project-card" data-card>
+          <div class="card-head">
+            <span class="label mono">01 · MVC</span>
+            <span class="status mono"><span class="dot dot-amber" aria-hidden="true"></span><span data-i18n="inDevelopment">In development</span></span>
+          </div>
+          <h3>Yazılım Envanteri</h3>
+          <p class="muted" data-summary="inventory"></p>
+          <ul class="tags mono"><li>ASP.NET Core MVC</li><li>Dapper</li><li>PostgreSQL</li><li>EF Core</li></ul>
+          <div class="card-actions">
+            <button class="btn btn-outline btn-sm" type="button" data-project="inventory" data-i18n="projectDetails">Architecture notes</button>
+            <a class="btn btn-ghost btn-sm" href="https://github.com/berreyazgi/YazilimEnvanteri" target="_blank" rel="noopener noreferrer">Source <span aria-hidden="true">↗</span></a>
+          </div>
+          <figure class="shot"><div class="shot-bar mono" aria-hidden="true"><i></i><i></i><i></i><span>yazilim-envanteri / projeler</span></div><img src="assets/inventory-projects.png" width="1892" height="900" alt="Yazılım Envanteri project table and filters" loading="lazy" data-alt="inventory"></figure>
+        </article>
+
+        <article class="card span-2 row-2 project-card" data-card>
+          <div class="card-head">
+            <span class="label mono">02 · WEB API</span>
+            <span class="status mono"><span class="dot dot-amber" aria-hidden="true"></span><span data-i18n="inDevelopment">In development</span></span>
+          </div>
+          <h3>ShopApp</h3>
+          <p class="muted" data-summary="shop"></p>
+          <ul class="tags mono"><li>ASP.NET Core API</li><li>EF Core</li><li>CQRS</li><li>JWT</li></ul>
+          <div class="card-actions">
+            <button class="btn btn-outline btn-sm" type="button" data-project="shop" data-i18n="projectDetails">Architecture notes</button>
+            <a class="btn btn-ghost btn-sm" href="https://github.com/berreyazgi/ShopApp" target="_blank" rel="noopener noreferrer">Source <span aria-hidden="true">↗</span></a>
+          </div>
+          <figure class="shot"><div class="shot-bar mono" aria-hidden="true"><i></i><i></i><i></i><span>shopapp / urunler</span></div><img src="assets/shopapp-design.png" width="1448" height="1086" alt="ShopApp product management interface design concept" loading="lazy" data-alt="shop"></figure>
+        </article>
+
+        <article class="card span-2 project-card" data-card>
+          <div class="card-head">
+            <span class="label mono">03 · PYTHON</span>
+            <span class="status mono"><span class="dot dot-blue" aria-hidden="true"></span>IBM Hackathon · <span data-i18n="ecoDate">Jan 2026</span></span>
+          </div>
+          <h3>Eco-Agent</h3>
+          <p class="muted" data-summary="eco"></p>
+          <ol class="pipeline mono" data-flow="eco" aria-label="Pipeline"></ol>
+          <div class="card-actions">
+            <button class="btn btn-outline btn-sm" type="button" data-project="eco" data-i18n="projectDetails">Architecture notes</button>
+            <a class="btn btn-ghost btn-sm" href="https://github.com/berreyazgi/ecoAgent" target="_blank" rel="noopener noreferrer">Source <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="card span-2" data-card id="stack" aria-labelledby="stack-title">
+          <div class="card-head"><span class="label mono" id="stack-title" data-i18n="stackTitle">Stack</span></div>
+          <dl class="stack" id="stack-list"></dl>
+        </article>
+      </div>
     </section>
-    <section class="about-section" id="about" aria-labelledby="about-title"><div class="wrap about-grid"><div class="about-label"><p class="eyebrow reveal"><span class="section-index">02 /</span><span data-i18n="aboutEyebrow">BEHIND THE BUILD</span></p><div class="about-mark" aria-hidden="true"><span>b</span><em>y</em><i>✳</i></div><p class="about-location" data-i18n="aboutLocation">BASED IN ANKARA.<br>CURIOUS ABOUT EVERYWHERE.</p></div><div class="about-copy"><h2 class="reveal" id="about-title" data-i18n="aboutTitle">I like knowing<br><em>how it all connects.</em></h2><p class="about-lead reveal" data-i18n="aboutLead">The data. The domain. The API. And the person using it.</p><p class="reveal" data-i18n="aboutDescription">I’m a fourth-year software engineering student at TED University, working with C# and ASP.NET Core. My projects are where I turn questions about architecture and databases into something I can build, test, and understand.</p><p class="reveal" data-i18n="aboutStack"></p><p class="reveal" data-i18n="aboutPersonal">Outside of software, I’m happiest on a nature walk or enjoying a quiet moment. There’s usually another question to follow when I’m back at my desk.</p><div class="about-facts reveal"><span>TED University</span><span data-i18n="studentFact">Software Engineering · Final year</span><span data-i18n="graduationFact">Aug 2022 – Jun 2027 (Expected)</span><span>Ankara, Türkiye</span></div></div></div></section>
-    <section class="experience-section wrap" id="experience" aria-labelledby="experience-title"><div class="section-top reveal"><p class="eyebrow"><span class="section-index">03 /</span><span data-i18n="experienceEyebrow">EXPERIENCE</span></p><p class="section-note" data-i18n="experienceNote">Internships and volunteer work.</p></div><h2 class="section-title reveal" id="experience-title" data-i18n="experienceTitle">Learning <em>on the job.</em></h2><ol class="timeline"><li class="timeline-item current reveal"><div class="timeline-meta"><span class="timeline-period" data-i18n="expOyuncakPeriod"></span><span class="timeline-location" data-i18n="expOyuncakLocation"></span></div><div class="timeline-body"><p class="timeline-role" data-i18n="expOyuncakRole"></p><h3>Oyuncak Kardeşliği</h3><p class="timeline-description" data-i18n="expOyuncakDesc"></p><div class="project-tags timeline-tags"><span>Requirements analysis</span><span>Architecture docs</span><span>Mobile app</span></div></div></li><li class="timeline-item reveal"><div class="timeline-meta"><span class="timeline-period" data-i18n="expMyuniPeriod"></span><span class="timeline-location" data-i18n="expMyuniLocation"></span></div><div class="timeline-body"><p class="timeline-role" data-i18n="expMyuniRole"></p><h3>MYUNI</h3><p class="timeline-description" data-i18n="expMyuniDesc"></p><div class="project-tags timeline-tags"><span>Fullstack</span><span>Responsive UI</span><span>Service integration</span></div></div></li><li class="timeline-item reveal"><div class="timeline-meta"><span class="timeline-period" data-i18n="expArdPeriod"></span><span class="timeline-location" data-i18n="expArdLocation"></span></div><div class="timeline-body"><p class="timeline-role" data-i18n="expArdRole"></p><h3>ARD Bilişim</h3><p class="timeline-description" data-i18n="expArdDesc"></p><div class="project-tags timeline-tags"><span>ASP.NET Core MVC</span><span>N-Tier</span><span>Dapper</span><span>SQL / LINQ</span><span>Unit testing</span><span>Agile / Scrum</span></div></div></li><li class="timeline-item reveal"><div class="timeline-meta"><span class="timeline-period" data-i18n="expMinistryPeriod"></span><span class="timeline-location" data-i18n="expMinistryLocation"></span></div><div class="timeline-body"><p class="timeline-role" data-i18n="expMinistryRole"></p><h3><span data-i18n="ministryName">Ministry of Environment, Urbanization and Climate Change</span></h3><p class="timeline-description" data-i18n="expMinistryDesc"></p><div class="project-tags timeline-tags"><span>SDLC</span><span>Network infrastructure</span><span>Security protocols</span></div></div></li></ol></section>
-    <section class="community-section wrap" id="community" aria-labelledby="community-title"><div class="section-top reveal"><p class="eyebrow"><span class="section-index">04 /</span><span data-i18n="communityEyebrow">COMMUNITY &amp; COMPETITIONS</span></p><p class="section-note" data-i18n="communityNote">Hackathons, clubs, and volunteering.</p></div><h2 class="section-title reveal" id="community-title" data-i18n="communityTitle">Beyond <em>the classroom.</em></h2><ul class="community-grid"><li class="community-card featured"><div class="community-top"><span data-i18n="kindHackathon"></span><span data-i18n="comIbmDate"></span></div><h3>IBM Hackathon</h3><p data-i18n="comIbmDesc"></p><button class="community-link" type="button" data-project="eco"><span data-i18n="seeEco">Eco-Agent project</span> <span aria-hidden="true">↗</span></button><span class="community-star" aria-hidden="true">✳</span></li><li class="community-card"><div class="community-top"><span data-i18n="kindCompetition"></span><span data-i18n="comHuaweiDate"></span></div><h3>Huawei ICT Competition</h3><p data-i18n="comHuaweiDesc"></p><span class="community-star" aria-hidden="true">✳</span></li><li class="community-card"><div class="community-top"><span data-i18n="kindCompetition"></span><span data-i18n="comEmlakDate"></span></div><h3>Emlak Konut Ideathon &amp; Garanti BBVA</h3><p data-i18n="comEmlakDesc"></p><span class="community-star" aria-hidden="true">✳</span></li><li class="community-card"><div class="community-top"><span data-i18n="kindCommunity"></span><span data-i18n="comGdgDate"></span></div><h3>TEDU GDG <small>(GDSC)</small></h3><p data-i18n="comGdgDesc"></p><span class="community-star" aria-hidden="true">✳</span></li><li class="community-card"><div class="community-top"><span data-i18n="kindCommunity"></span><span data-i18n="comAwsDate"></span></div><h3>TEDU AWS Cloud Club</h3><p data-i18n="comAwsDesc"></p><span class="community-star" aria-hidden="true">✳</span></li><li class="community-card"><div class="community-top"><span data-i18n="kindVolunteering"></span><span data-i18n="comEscDate"></span></div><h3>Erasmus+ European Solidarity Corps</h3><p data-i18n="comEscDesc"></p><span class="community-star" aria-hidden="true">✳</span></li></ul></section>
-    <section class="toolbox-section wrap" id="toolbox" aria-labelledby="toolbox-title"><div class="section-top reveal"><p class="eyebrow"><span class="section-index">05 /</span><span data-i18n="toolboxEyebrow">MY TOOLBOX</span></p><p class="section-note" data-i18n="toolboxNote">Tools I use. Ideas I’m exploring.</p></div><div class="toolbox-layout"><h2 class="section-title reveal" id="toolbox-title" data-i18n="toolboxTitle">Always<br><em>connecting dots.</em></h2><div class="toolbox-interactive reveal"><div class="toolbox-tabs" role="tablist" aria-label="Areas of interest"><button id="tab-languages" role="tab" aria-controls="toolbox-panel" aria-selected="true" data-toolbox="languages" type="button"><span>01</span><span data-i18n="tabLanguages">Languages</span></button><button id="tab-frameworks" role="tab" aria-controls="toolbox-panel" aria-selected="false" tabindex="-1" data-toolbox="frameworks" type="button"><span>02</span><span data-i18n="tabFrameworks">Frameworks</span></button><button id="tab-devops" role="tab" aria-controls="toolbox-panel" aria-selected="false" tabindex="-1" data-toolbox="devops" type="button"><span>03</span><span data-i18n="tabDevops">DevOps &amp; Tools</span></button><button id="tab-data" role="tab" aria-controls="toolbox-panel" aria-selected="false" tabindex="-1" data-toolbox="data" type="button"><span>04</span><span data-i18n="tabData">Data &amp; Architecture</span></button></div><div id="toolbox-panel" class="toolbox-panel" role="tabpanel" aria-labelledby="tab-languages" tabindex="0"></div></div></div></section>
-    <section class="contact-section wrap" id="contact" aria-labelledby="contact-title"><div class="contact-top reveal"><p class="eyebrow"><span class="status-dot"></span><span data-i18n="contactEyebrow">OPEN TO INTERNSHIPS & COLLABORATION</span></p><span class="contact-location">ANKARA / REMOTE</span></div><a class="contact-main" href="https://github.com/berreyazgi" target="_blank" rel="noopener noreferrer"><h2 id="contact-title" data-i18n="contactTitle">Let’s build<br><em>something good.</em></h2><span class="contact-arrow" aria-hidden="true">↗</span></a><div class="contact-bottom"><p data-i18n="contactText">Interested in .NET backend development, cloud, and DevOps. Always open to a good learning opportunity.</p><a class="contact-github" href="https://github.com/berreyazgi" target="_blank" rel="noopener noreferrer">GITHUB.COM/BERREYAZGI ↗</a></div></section>
+
+    <section class="section wrap" id="about" aria-labelledby="about-title">
+      <header class="section-head" data-reveal>
+        <p class="label mono">02 / <span data-i18n="aboutEyebrow">About</span></p>
+        <h2 id="about-title" data-i18n="aboutTitle">Profile</h2>
+      </header>
+      <div class="bento" data-stagger>
+        <article class="card span-2 row-2" data-card>
+          <p class="prose" data-i18n="aboutDescription"></p>
+          <p class="prose muted" data-i18n="aboutStack"></p>
+        </article>
+        <article class="card" data-card>
+          <span class="label mono" data-i18n="eduLabel">Education</span>
+          <p class="card-title">TED University</p>
+          <p class="muted" data-i18n="studentFact">B.Sc. Software Engineering · Final year</p>
+          <p class="mono small muted" data-i18n="graduationFact">2022 – 2027 (expected)</p>
+        </article>
+        <article class="card" data-card>
+          <span class="label mono" data-i18n="nowLabel">Current</span>
+          <p class="card-title" data-i18n="expOyuncakRole"></p>
+          <p class="muted">Oyuncak Kardeşliği</p>
+          <p class="mono small muted" data-i18n="expOyuncakPeriod"></p>
+        </article>
+        <article class="card span-2 metric-card" data-card>
+          <div><span class="metric mono">4</span><span class="muted small" data-i18n="metricRoles">internship &amp; volunteer roles</span></div>
+          <div><span class="metric mono">3</span><span class="muted small" data-i18n="metricProjects">documented projects</span></div>
+          <div><span class="metric mono">6</span><span class="muted small" data-i18n="metricCommunity">competitions &amp; communities</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap" id="experience" aria-labelledby="experience-title">
+      <header class="section-head" data-reveal>
+        <p class="label mono">03 / <span data-i18n="experienceEyebrow">Experience</span></p>
+        <h2 id="experience-title" data-i18n="experienceTitle">Experience</h2>
+        <p class="muted" data-i18n="experienceNote">Internships and volunteer engineering work.</p>
+      </header>
+      <ol class="card timeline" data-reveal>
+        <li><div class="tl-meta mono"><span data-i18n="expOyuncakPeriod"></span><span data-i18n="expOyuncakLocation"></span></div><div><h3>Oyuncak Kardeşliği <span class="muted" data-i18n="expOyuncakRole"></span></h3><p class="muted" data-i18n="expOyuncakDesc"></p><ul class="tags mono"><li>Requirements analysis</li><li>Architecture docs</li><li>Mobile</li></ul></div></li>
+        <li><div class="tl-meta mono"><span data-i18n="expMyuniPeriod"></span><span data-i18n="expMyuniLocation"></span></div><div><h3>MYUNI <span class="muted" data-i18n="expMyuniRole"></span></h3><p class="muted" data-i18n="expMyuniDesc"></p><ul class="tags mono"><li>Fullstack</li><li>Responsive UI</li><li>Service integration</li></ul></div></li>
+        <li><div class="tl-meta mono"><span data-i18n="expArdPeriod"></span><span data-i18n="expArdLocation"></span></div><div><h3>ARD Bilişim <span class="muted" data-i18n="expArdRole"></span></h3><p class="muted" data-i18n="expArdDesc"></p><ul class="tags mono"><li>ASP.NET Core MVC</li><li>N-Tier</li><li>Dapper</li><li>SQL / LINQ</li><li>Unit testing</li><li>Scrum</li></ul></div></li>
+        <li><div class="tl-meta mono"><span data-i18n="expMinistryPeriod"></span><span data-i18n="expMinistryLocation"></span></div><div><h3><span data-i18n="ministryName"></span> <span class="muted" data-i18n="expMinistryRole"></span></h3><p class="muted" data-i18n="expMinistryDesc"></p><ul class="tags mono"><li>SDLC</li><li>Networking</li><li>Security</li></ul></div></li>
+      </ol>
+    </section>
+
+    <section class="section wrap" id="community" aria-labelledby="community-title">
+      <header class="section-head" data-reveal>
+        <p class="label mono">04 / <span data-i18n="communityEyebrow">Community</span></p>
+        <h2 id="community-title" data-i18n="communityTitle">Competitions &amp; communities</h2>
+      </header>
+      <ul class="bento bento-3" data-stagger>
+        <li class="card span-2" data-card><div class="card-head"><span class="label mono" data-i18n="kindHackathon"></span><span class="mono small muted" data-i18n="comIbmDate"></span></div><p class="card-title">IBM Hackathon</p><p class="muted" data-i18n="comIbmDesc"></p><button class="btn btn-ghost btn-sm inline-btn" type="button" data-project="eco"><span data-i18n="seeEco">Eco-Agent notes</span> <span aria-hidden="true">→</span></button></li>
+        <li class="card" data-card><div class="card-head"><span class="label mono" data-i18n="kindCompetition"></span><span class="mono small muted" data-i18n="comHuaweiDate"></span></div><p class="card-title">Huawei ICT Competition</p><p class="muted" data-i18n="comHuaweiDesc"></p></li>
+        <li class="card" data-card><div class="card-head"><span class="label mono" data-i18n="kindCompetition"></span><span class="mono small muted" data-i18n="comEmlakDate"></span></div><p class="card-title">Emlak Konut Ideathon &amp; Garanti BBVA</p><p class="muted" data-i18n="comEmlakDesc"></p></li>
+        <li class="card span-2" data-card><div class="card-head"><span class="label mono" data-i18n="kindCommunity"></span><span class="mono small muted" data-i18n="comGdgDate"></span></div><p class="card-title">TEDU GDG <span class="muted">(GDSC)</span></p><p class="muted" data-i18n="comGdgDesc"></p></li>
+        <li class="card" data-card><div class="card-head"><span class="label mono" data-i18n="kindCommunity"></span><span class="mono small muted" data-i18n="comAwsDate"></span></div><p class="card-title">TEDU AWS Cloud Club</p><p class="muted" data-i18n="comAwsDesc"></p></li>
+        <li class="card" data-card><div class="card-head"><span class="label mono" data-i18n="kindVolunteering"></span><span class="mono small muted" data-i18n="comEscDate"></span></div><p class="card-title">Erasmus+ European Solidarity Corps</p><p class="muted" data-i18n="comEscDesc"></p></li>
+      </ul>
+    </section>
+
+    <section class="section wrap" id="contact" aria-labelledby="contact-title">
+      <div class="card contact" data-card data-reveal>
+        <div>
+          <p class="label mono">05 / <span data-i18n="contactEyebrow">Contact</span></p>
+          <h2 id="contact-title" data-i18n="contactTitle">Get in touch</h2>
+          <p class="muted" data-i18n="contactText"></p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/berreyazgi" target="_blank" rel="noopener noreferrer">github.com/berreyazgi <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer wrap"><span>© <span id="footer-year">2026</span> BERRE YAZGI</span><span data-i18n="footerNote">MADE WITH CURIOSITY. MOVED WITH GSAP.</span><a href="#home"><span data-i18n="backTop">BACK TO TOP</span> ↑</a></footer>
-  <dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><span class="eyebrow" data-i18n="projectNotes">PROJECT NOTES</span><button id="dialog-close" class="dialog-close" type="button" aria-label="Close project notes">×</button></div><div id="dialog-content"></div></dialog>
+
+  <footer class="site-footer wrap mono small muted">
+    <span>© <span id="footer-year">2026</span> Berre Yazgı</span>
+    <span data-i18n="footerNote">HTML · CSS · Motion</span>
+    <a href="#top" data-i18n="backTop">Back to top ↑</a>
+  </footer>
+
+  <dialog id="project-dialog" class="dialog" aria-labelledby="dialog-title">
+    <div class="dialog-head"><span class="label mono" data-i18n="projectNotes">Architecture notes</span><button id="dialog-close" class="btn btn-ghost btn-icon" type="button" aria-label="Close">✕</button></div>
+    <div id="dialog-content"></div>
+  </dialog>
 </body>
 </html>
